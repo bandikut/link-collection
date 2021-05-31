@@ -11,12 +11,14 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    border-width: 2px;
 }
 
 .title {
     font-size: 3rem;
     font-weight: 300;
 }
+
 .sys-container {
     border-bottom: 1px solid #cdcdcd;
     margin-top: 20px !important;
@@ -39,6 +41,11 @@ body {
     text-align: justify;
 }
 
+.next-button {
+    background-color: #1ea2a1 !important;
+    color: #F5F5F5 !important;
+}
+
 .details-link-container {
     margin: 20px 0 20px 0 !important;
 }
@@ -50,10 +57,3 @@ body {
     text-decoration: none !important;
     margin-left: 15px;
 }
-
-.chevron:hover {
-    transform-origin: center;
-    transform: rotate(180deg);
-    transition: all 0.3s ease-in-out;
-}
-

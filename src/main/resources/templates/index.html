@@ -21,20 +21,22 @@
     <div class="sys-container">
         <p class="sys-name">Rendszer neve</p>
         <div class="row">
-            <div class="col-md-3">
+            <div class="col-lg-3">
                 <img src="assets/images/temp-pic.jpg" alt="pic 1" class="template-img">
             </div>
-            <div class="col-md-9 description">
+            <div class="col-lg-9 description">
                 ide kerül a rendszer leírása ide kerül a rendszer leírásaide kerül a rendszer leírásaide kerül a
                 rendszer leírásaide kerül a rendszer leírásaide kerül a rendszer leírásaide kerül a rendszer
                 leírásaide
                 kerül a rendszer leírásaide kerül a rendszer leírásaide kerül a rendszer leírásaide kerül a rendszer
                 leírásaide kerül a rendszer leírása
                 leírásaide kerül a rendszer leírása
+                <br><br>
+                <a href="#" class="btn next-button">Tovább a rendszerre >></a>
             </div>
         </div>
         <div class="row">
-            <div class="col-md-12 details-link-container">
+            <div class="col-lg-12 details-link-container">
                 <img src="assets/images/chevron.svg" class="chevron"/>
                 <a class="details-link" data-bs-toggle="collapse" href="#leiras" role="button" aria-expanded="false"
                    aria-controls="leiras">
@@ -43,7 +45,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="collapse col-md-12" id="leiras">
+            <div class="collapse col-lg-12" id="leiras">
                 <div class="card card-body">
                     Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of
                     classical
@@ -64,20 +66,22 @@
     <div class="sys-container">
         <p class="sys-name">Rendszer neve</p>
         <div class="row">
-            <div class="col-md-9 description">
+            <div class="col-lg-9 description">
                 ide kerül a rendszer leírása ide kerül a rendszer leírásaide kerül a rendszer leírásaide kerül a
                 rendszer leírásaide kerül a rendszer leírásaide kerül a rendszer leírásaide kerül a rendszer
                 leírásaide
                 kerül a rendszer leírásaide kerül a rendszer leírásaide kerül a rendszer leírásaide kerül a rendszer
                 leírásaide kerül a rendszer leírása
                 leírásaide kerül a rendszer leírása
+                <br><br>
+                <a href="#" class="btn next-button">Tovább a rendszerre >></a>
             </div>
-            <div class="col-md-3">
+            <div class="col-lg-3">
                 <img src="assets/images/temp-pic.jpg" alt="pic 1" class="template-img">
             </div>
         </div>
         <div class="row">
-            <div class="col-md-12 details-link-container">
+            <div class="col-lg-12 details-link-container">
                 <img src="assets/images/chevron.svg" class="chevron"/>
                 <a class="details-link" data-bs-toggle="collapse" href="#leiras2" role="button" aria-expanded="false"
                    aria-controls="leiras2">
@@ -86,7 +90,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="collapse col-md-12" id="leiras2">
+            <div class="collapse col-lg-12" id="leiras2">
                 <div class="card card-body">
                     Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of
                     classical
@@ -107,20 +111,22 @@
     <div class="sys-container">
         <p class="sys-name">Rendszer neve</p>
         <div class="row">
-            <div class="col-md-3">
+            <div class="col-lg-3">
                 <img src="assets/images/temp-pic.jpg" alt="pic 1" class="template-img">
             </div>
-            <div class="col-md-9 description">
+            <div class="col-lg-9 description">
                 ide kerül a rendszer leírása ide kerül a rendszer leírásaide kerül a rendszer leírásaide kerül a
                 rendszer leírásaide kerül a rendszer leírásaide kerül a rendszer leírásaide kerül a rendszer
                 leírásaide
                 kerül a rendszer leírásaide kerül a rendszer leírásaide kerül a rendszer leírásaide kerül a rendszer
                 leírásaide kerül a rendszer leírása
                 leírásaide kerül a rendszer leírása
+                <br><br>
+                <a href="#" class="btn next-button">Tovább a rendszerre >></a>
             </div>
         </div>
         <div class="row">
-            <div class="col-md-12 details-link-container">
+            <div class="col-lg-12 details-link-container">
                 <img src="assets/images/chevron.svg" class="chevron"/>
                 <a class="details-link" data-bs-toggle="collapse" href="#leiras3" role="button" aria-expanded="false"
                    aria-controls="leiras3">
@@ -129,7 +135,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="collapse col-md-12" id="leiras3">
+            <div class="collapse col-lg-12" id="leiras3">
                 <div class="card card-body">
                     Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of
                     classical
@@ -155,9 +161,25 @@
 <script th:inline="javascript">
     /*<![CDATA[*/
 
-    console.log("message");
-    // document.getElementById("rn").style.color = "rosybrown";
-    // $('#rn').css("border", "3px solid red" );
+    let isOpen = false;
+
+    $('.details-link-container').bind('click',function () {
+
+        const rotateChevron = (deg) => {
+            $(this).children('img.chevron')
+                .animate(
+                    {deg: deg},
+                    {
+                        duration: 300,
+                        step: function (now) {
+                            $(this).css({transform: 'rotate(' + now + 'deg)'});
+                        }
+                    }
+                );
+            isOpen = !isOpen;
+        };
+        !isOpen ? rotateChevron(180) : rotateChevron(360);
+    })
 
     /*]]>*/
 </script>
